@@ -1,10 +1,10 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Audiostream.h"
+#include "supportFunctions.h"
 
 using namespace std;
-
-
 
 class Podcast : public Audiostream {
     private:
@@ -20,7 +20,8 @@ class Podcast : public Audiostream {
     }
 
     void play() const override {
-        cout << "Now playing Podcast: " << title << " Episode #" << episodeNumber << ", featuring "
-        << guest << "." << endl;
+        cout << "Now playing Podcast: " << title << " Ep #" << episodeNumber << " (Host: "
+        << artist << ", Guest: " << guest << ")" << endl;
+        ab.play();
     }
 };
